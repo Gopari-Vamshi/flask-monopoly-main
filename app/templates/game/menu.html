@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+
+{% block css%}
+    {% assets "menu_scss" %}
+    <link rel=stylesheet type=text/css href="{{ ASSET_URL }}">
+
+    {% endassets %}
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h2>CHOOSE GAME MODE</h2>
+            <div class="modes-container">
+                <a class="tile" href="{{ url_for('game.init_pvp') }}">
+                    <img src="{{url_for('static', filename='images/dice.svg')}}" alt="people">
+                    <p>PLAY ONLINE!</p>
+                </a>
+            </div>
+    </div>
+{% endblock %}
